@@ -1,0 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.year {
+padding: 10px;
+display: inline;
+}
