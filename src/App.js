@@ -3,6 +3,7 @@ import Population from './views/Population';
 import axios from 'axios';
 import { sqlQuery } from './functions/SqlQuery';
 
+import './App.css';
 
 function App() {
   const [query, setQuery] = useState([]);
