@@ -10,12 +10,11 @@ function App() {
 
   useEffect(() => {
     axios.post('/OV0104/v1/doris/sv/ssd/START/BE/BE0101/BE0101A/FolkmangdDistrikt', sqlQuery)
-    .then(res => {
-      setQuery(res.data.data);
-    })
-  }, []);
+    .then(res => setQuery(res.data.data))
+  }, [])
 
 
+console.log(query);
 
   return (
     <div className="App">
