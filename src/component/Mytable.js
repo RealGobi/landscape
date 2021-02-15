@@ -10,28 +10,17 @@ const Mytable = (props) => {
   };
   const { sortDuplicateHeader, result } = props;
 
-  console.log(result);
-
-
-  // sort by population per year
-
+  // sort by population per year and by landscape
   const listSorted = result;
-  const [sortYear1, setSortYear1] = useState(false);
-  const [sortYear2, setSortYear2] = useState(false);
-  const [sortYear3, setSortYear3] = useState(false);
   const handleSort = (idx) => {
-    sortYear1 || sortYear2 || sortYear3 ? listSorted.sort((a, b) => a.data[idx-1].pop - b.data[idx-1].pop)
+    if(!idx){
+      sortTitle ? listSorted.sort((a, b) => (a.title > b.title) ? 1 : -1)
+      : listSorted.sort((a, b) => (b.title > a.title) ? 1 : -1)
+      setSortTitle(!sortTitle);
+    } else
+    sortYear ? listSorted.sort((a, b) => a.data[idx-1].pop - b.data[idx-1].pop)
     : listSorted.sort((a, b) => b.data[idx-1].pop - a.data[idx-1].pop);
-   
-    if(idx === 1){
-      setSortYear1(!sortYear1);
-    }
-    if(idx === 2){
-      setSortYear2(!sortYear2);
-    }
-    if(idx === 3){
-      setSortYear3(!sortYear3);
-    }
+    setSortYear(!sortYear);
   }
 
   return (
