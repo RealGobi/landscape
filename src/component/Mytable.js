@@ -51,7 +51,7 @@ const Mytable = (props) => {
       <thead>
           <tr>
         {sortDuplicateHeader.map((header, idx) => {
-        return <th onClick={()=> handleSort(idx)} key={idx}>{ header }</th>
+        return <th onClick={()=> handleSort(idx)} key={idx}><span className="pointer" >{ header }</span></th>
         })}
           </tr>
       </thead>
