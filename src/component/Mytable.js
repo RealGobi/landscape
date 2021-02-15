@@ -56,8 +56,8 @@ const Mytable = (props) => {
                 <tr key={idx} className="alignLeft">
                   <td>{ res.title }</td>
                   <td>{ res.data[0].pop }</td>
-                  <td>{ Math.round( ( res.data[1].pop / res.data[0].pop + Number.EPSILON ) * 1000 ) / 1000 }%</td>
-                  <td>{ Math.round( ( res.data[2].pop / res.data[1].pop + Number.EPSILON ) * 1000 ) / 1000 }%</td>
+                  <td>{ Math.round( ( res.data[1].pop / res.data[0].pop + Number.EPSILON ) * 10000 ) / 10000 }%</td>
+                  <td>{ Math.round( ( res.data[2].pop / res.data[1].pop + Number.EPSILON ) * 10000 ) / 10000 }%</td>
                 </tr>
                 :
                 <tr key={idx} className="alignLeft">
