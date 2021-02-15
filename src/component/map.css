@@ -1,0 +1,45 @@
+
+.map {
+  display: flex;
+  align-items: center;
+}
+.map img {
+  margin-top: 40px;
+  width: 313;
+  height: 690;
+}
+
+.card {
+  width: 200px;
+  height: 100px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(1fr, 3);
+  grid-template-rows: 35px 65px;
+  grid-template-areas: 
+  "landscape landscape landscape"
+  "year17 year18 year19";
+}
+
+.landscape {
+  grid-area: landscape;
+  background-color:#00B388;
+  height: 35px;
+
+}
+
+.year17 {
+  grid-area: year17;
+  background-color:#7AE1BF;
+}
+
+.year18 {
+  grid-area: year18;
+  background-color:#F7F4F4;
+}
+
+.year19 {
+  grid-area: year19;
+  background-color:#7AE1BF;
+}
