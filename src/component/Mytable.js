@@ -16,11 +16,22 @@ const Mytable = (props) => {
   // sort by population per year
 
   const listSorted = result;
-  const [sortYear, setSortYear] = useState(false);
+  const [sortYear1, setSortYear1] = useState(false);
+  const [sortYear2, setSortYear2] = useState(false);
+  const [sortYear3, setSortYear3] = useState(false);
   const handleSort = (idx) => {
-    sortYear ? listSorted.sort((a, b) => a.data[idx-1].pop - b.data[idx-1].pop)
+    sortYear1 || sortYear2 || sortYear3 ? listSorted.sort((a, b) => a.data[idx-1].pop - b.data[idx-1].pop)
     : listSorted.sort((a, b) => b.data[idx-1].pop - a.data[idx-1].pop);
-    setSortYear(!sortYear)
+   
+    if(idx === 1){
+      setSortYear1(!sortYear1);
+    }
+    if(idx === 2){
+      setSortYear2(!sortYear2);
+    }
+    if(idx === 3){
+      setSortYear3(!sortYear3);
+    }
   }
 
   return (
