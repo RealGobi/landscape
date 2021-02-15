@@ -1,12 +1,16 @@
-import Mytable from '../component/Mytable';
+import React, { useState } from 'react';
+import MyTable from '../component/MyTable';
+import MyTabs from '../component/MyTabs';
+import Map from '../component/Map';
 import { landscape } from '../functions/LandscapeCode';
-
+import {Tabs, Tab} from '@material-ui/core';
 
 
 const Population = (props) => {
   const { query } = props;
   let output = landscape(query);
-  
+  const [value, setValue] = useState(0);
+
   // Table header 
   let sortDuplicateHeader = Array.from(new Set(output.map(q=>q.year)));
   sortDuplicateHeader.splice(0, 0,'Landskap');
@@ -30,10 +34,26 @@ const Population = (props) => {
   
   console.log(result)
 
+  const handleChange = (e, newValue) => {
+    setValue(newValue);
+  };
   return (
-    <div className="container">
-     <Mytable result={result} sortDuplicateHeader={sortDuplicateHeader} />
-    </div>
+    <>
+    <nav>
+      <Tabs indicatorColor="primary" value={value} onChange={handleChange}>
+        <Tab label="Tabell" />
+        <Tab label="Karta" />
+      </Tabs>
+    </nav>
+      <div className="container">
+        <MyTabs value={value} index={0}>
+            <MyTable result={result} sortDuplicateHeader={sortDuplicateHeader} />
+        </MyTabs>
+        <MyTabs value={value} index={1}>
+          <Map result={result} />
+        </MyTabs>
+      </div>
+    </>
   );
 
 }
