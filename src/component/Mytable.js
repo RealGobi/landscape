@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Switch from '@material-ui/core/Switch';
 
-
 const Mytable = (props) => {
   // destruct props
   const { sortDuplicateHeader, result } = props;
@@ -51,14 +50,22 @@ const Mytable = (props) => {
           </tr>
       </thead>
       <tbody>
-            {result.map((res, idx) => {
+            {listSorted.map((res, idx) => {
               return(
+                checked ? 
                 <tr key={idx} className="alignLeft">
                   <td>{ res.title }</td>
                   <td>{ res.data[0].pop }</td>
-                  <td>{ res.data[1].pop }</td>
-                  <td>{ res.data[2].pop }</td>
+                  <td>{ Math.round( ( res.data[1].pop / res.data[0].pop + Number.EPSILON ) * 1000 ) / 1000 }%</td>
+                  <td>{ Math.round( ( res.data[2].pop / res.data[1].pop + Number.EPSILON ) * 1000 ) / 1000 }%</td>
                 </tr>
+                :
+                <tr key={idx} className="alignLeft">
+                <td>{ res.title }</td>
+                <td>{ res.data[0].pop }</td>
+                <td>{ res.data[1].pop }</td>
+                <td>{ res.data[2].pop }</td>
+              </tr>
               )
           })}
       </tbody>
