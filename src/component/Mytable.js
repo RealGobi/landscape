@@ -11,6 +11,18 @@ const Mytable = (props) => {
   const { sortDuplicateHeader, result } = props;
 
   console.log(result);
+
+
+  // sort by population per year
+
+  const listSorted = result;
+  const [sortYear, setSortYear] = useState(false);
+  const handleSort = (idx) => {
+    sortYear ? listSorted.sort((a, b) => a.data[idx-1].pop - b.data[idx-1].pop)
+    : listSorted.sort((a, b) => b.data[idx-1].pop - a.data[idx-1].pop);
+    setSortYear(!sortYear)
+  }
+
   return (
     <>
       <Switch
@@ -22,7 +34,7 @@ const Mytable = (props) => {
       <thead>
           <tr>
         {sortDuplicateHeader.map((header, idx) => {
-        return <th key={idx}>{ header }</th>
+        return <th onClick={()=> handleSort(idx)} key={idx}>{ header }</th>
         })}
           </tr>
       </thead>
