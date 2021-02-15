@@ -3,12 +3,18 @@ import Switch from '@material-ui/core/Switch';
 
 
 const Mytable = (props) => {
-  const [checked, setChecked] = useState(false);
+  // destruct props
+  const { sortDuplicateHeader, result } = props;
 
+  //state
+  const [checked, setChecked] = useState(false);
+  const [sortYear, setSortYear] = useState(true);
+  const [sortTitle, setSortTitle] = useState(true);
+
+  // see in %
   const handleChange = (e) => {
     setChecked(!checked);
   };
-  const { sortDuplicateHeader, result } = props;
 
   // sort by population per year and by landscape
   const listSorted = result;
