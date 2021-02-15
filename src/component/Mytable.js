@@ -36,11 +36,17 @@ const Mytable = (props) => {
 
   return (
     <>
+    <div className="switch">
+      <h3 className="show">Visa</h3>
+      <p className="count">Antal</p>
+      <p className="percent">Procent</p>
       <Switch
+        className="handler"
         checked={checked && checked}
         onChange={handleChange}
         name="checked"
       />
+    </div>
       <table className="styled-table">
       <thead>
           <tr>

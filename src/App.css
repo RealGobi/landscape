@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+body {
+  max-width: 800px;
+}
 .heading li {
 padding: 10px;
 display: inline;
@@ -72,4 +75,33 @@ th, td { display: block; } */
 
 .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #00B388;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.switch {
+  display: grid;
+  grid-template-columns: 400px 1fr 1fr 1fr;
+  grid-template-areas:
+  ". swow show show"
+  ". count handler percent";
+  margin: 25px 0 0 0;
+}
+
+.show {
+  grid-area: show;
+}
+
+.count {
+  grid-area: count;
+}
+
+.percent {
+  grid-area: percent;
+}
+
+.handler {
+  grid-area: handler;
 }
