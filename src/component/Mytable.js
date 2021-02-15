@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Switch from '@material-ui/core/Switch';
 
-const Mytable = (props) => {
+const MyTable = (props) => {
   // destruct props
   const { sortDuplicateHeader, result } = props;
 
@@ -36,6 +36,7 @@ const Mytable = (props) => {
       <p className="percent">Procent</p>
       <Switch
         className="handler"
+        color="primary"
         checked={checked && checked}
         onChange={handleChange}
         name="checked"
@@ -56,8 +57,8 @@ const Mytable = (props) => {
                 <tr key={idx} className="alignLeft">
                   <td>{ res.title }</td>
                   <td>{ res.data[0].pop }</td>
-                  <td>{ Math.round( ( res.data[1].pop / res.data[0].pop + Number.EPSILON ) * 10000 ) / 10000 }%</td>
-                  <td>{ Math.round( ( res.data[2].pop / res.data[1].pop + Number.EPSILON ) * 10000 ) / 10000 }%</td>
+                  <td>{ Math.round((res.data[1].pop / res.data[0].pop + Number.EPSILON ) * 10000) / 10000}%</td>
+                  <td>{ Math.round((res.data[2].pop / res.data[1].pop + Number.EPSILON ) * 10000) / 10000}%</td>
                 </tr>
                 :
                 <tr key={idx} className="alignLeft">
@@ -74,4 +75,4 @@ const Mytable = (props) => {
   )
 }
 
-export default Mytable
+export default MyTable;
