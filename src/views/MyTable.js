@@ -23,8 +23,8 @@ const MyTable = (props) => {
       : listSorted.sort((a, b) => (b.title > a.title) ? 1 : -1)
       setSortTitle(!sortTitle);
     } else
-    sortYear ? listSorted.sort((a, b) => a.data[idx-1].pop - b.data[idx-1].pop)
-    : listSorted.sort((a, b) => b.data[idx-1].pop - a.data[idx-1].pop);
+    sortYear ? listSorted.sort((a, b) => a.data[idx-1].population - b.data[idx-1].population)
+    : listSorted.sort((a, b) => b.data[idx-1].population - a.data[idx-1].population);
     setSortYear(!sortYear);
   }
 
@@ -56,16 +56,16 @@ const MyTable = (props) => {
                 checked ? 
                 <tr key={idx} className="alignLeft">
                   <td>{ res.title }</td>
-                  <td>{ res.data[0].pop }</td>
-                  <td>{ Math.round((res.data[1].pop / res.data[0].pop + Number.EPSILON ) * 10000) / 10000}%</td>
-                  <td>{ Math.round((res.data[2].pop / res.data[1].pop + Number.EPSILON ) * 10000) / 10000}%</td>
+                  <td>{ res.data[0].population }</td>
+                  <td>{ Math.round((res.data[1].population / res.data[0].population + Number.EPSILON ) * 10000) / 10000}%</td>
+                  <td>{ Math.round((res.data[2].population / res.data[1].population + Number.EPSILON ) * 10000) / 10000}%</td>
                 </tr>
                 :
                 <tr key={idx} className="alignLeft">
                 <td>{ res.title }</td>
-                <td>{ res.data[0].pop }</td>
-                <td>{ res.data[1].pop }</td>
-                <td>{ res.data[2].pop }</td>
+                <td>{ res.data[0].population }</td>
+                <td>{ res.data[1].population }</td>
+                <td>{ res.data[2].population }</td>
               </tr>
               )
           })}
