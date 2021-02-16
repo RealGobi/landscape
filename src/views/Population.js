@@ -7,36 +7,39 @@ import {Tabs, Tab} from '@material-ui/core';
 
 
 const Population = (props) => {
+
+  // destruct props
   const { query } = props;
+
+  // pass quary in to landscape func
   let output = landscape(query);
+
+  // state
   const [value, setValue] = useState(0);
 
   // Table header 
   let sortDuplicateHeader = Array.from(new Set(output.map(q=>q.year)));
   sortDuplicateHeader.splice(0, 0,'Landskap');
 
-  //
-  
+  // remove duplicate of key: title and push to one arr
   const result = output.reduce((acc, d) => {
     const found = acc.find(a => a.title === d.title);
 
-    const year = { year: d.year, pop: d.pop }; // the element in data property
+    const year = { year: d.year, pop: d.pop }; 
     if (!found) {
-      //acc.push(...value);
-      acc.push({title:d.title, data: [year]}) // not found, so need to add data property
+      acc.push({title:d.title, data: [year]});
     }
     else {
-      //acc.push({ name: d.name, data: [{ value: d.value }, { count: d.count }] });
-      found.data.push(year) // if found, that means data property exists, so just push new element to found.data.
+      found.data.push(year);
     }
     return acc;
   }, []);
   
-  console.log(result)
-
+  // select tab
   const handleChange = (e, newValue) => {
     setValue(newValue);
   };
+  
   return (
     <>
     <nav>

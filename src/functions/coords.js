@@ -1,3 +1,5 @@
+
+// coords for all landscape, arr to loop over
 export const coords = [
   {id: 1, coords:"100, 200 , 185, 265, 280, 50, 235,5, 100,200", title: 'Lappland'},
   {id: 2, coords:"285, 55, 235, 190, 265, 205, 305, 72", title: 'Norrbotten'},

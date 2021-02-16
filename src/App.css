@@ -26,8 +26,8 @@ nav {
 }
 
 .heading li {
-padding: 10px;
-display: inline;
+  padding: 10px;
+  display: inline;
 }
 
 .styled-table {
@@ -49,8 +49,6 @@ display: inline;
   font-size: 1em;
   font-weight: bold;
 }
-/* tr { display: block; float: left; }
-th, td { display: block; } */
 
 .styled-table thead th {
   display: inline-block;
