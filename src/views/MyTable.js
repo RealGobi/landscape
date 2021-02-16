@@ -19,10 +19,12 @@ const MyTable = (props) => {
   const listSorted = result;
   const handleSort = (idx) => {
     if(!idx){
+      // for title
       sortTitle ? listSorted.sort((a, b) => (a.title > b.title) ? 1 : -1)
       : listSorted.sort((a, b) => (b.title > a.title) ? 1 : -1)
       setSortTitle(!sortTitle);
     } else
+    // for population
     sortYear ? listSorted.sort((a, b) => a.data[idx-1].population - b.data[idx-1].population)
     : listSorted.sort((a, b) => b.data[idx-1].population - a.data[idx-1].population);
     setSortYear(!sortYear);

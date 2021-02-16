@@ -21,10 +21,9 @@ const Population = (props) => {
   let sortDuplicateHeader = Array.from(new Set(output.map(q=>q.year)));
   sortDuplicateHeader.splice(0, 0,'Landskap');
 
-  // remove duplicate of key: title and push to one arr
+  // remove duplicate of key: title, and push to data one arr
   const result = output.reduce((acc, d) => {
     const found = acc.find(a => a.title === d.title);
-
     const year = { year: d.year, population: d.population }; 
     if (!found) {
       acc.push({title:d.title, data: [year]});
@@ -51,7 +50,7 @@ const Population = (props) => {
     </nav>
       <div className="container">
         <MyTabs value={value} index={0}>
-            <MyTable result={result} sortDuplicateHeader={sortDuplicateHeader} />
+          <MyTable result={result} sortDuplicateHeader={sortDuplicateHeader} />
         </MyTabs>
         <MyTabs value={value} index={1}>
           <Map result={result} />
