@@ -13,7 +13,7 @@ const Card = ({ title, data }) => {
             return (
               <div className={'year'+item.year} key={idx}>
                 <p style={{ fontWeight: 'bold' }}>{item.year}</p>
-                <p>{item.pop }</p>
+                <p>{item.population }</p>
               </div>
             )
           })

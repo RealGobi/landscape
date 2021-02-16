@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MyTable from '../component/MyTable';
+import MyTable from './MyTable';
 import MyTabs from '../component/MyTabs';
 import Map from './Map';
 import { landscape } from '../functions/LandscapeCode';
@@ -13,7 +13,7 @@ const Population = (props) => {
 
   // pass quary in to landscape func
   let output = landscape(query);
-
+  console.log(output);
   // state
   const [value, setValue] = useState(0);
 
@@ -25,7 +25,7 @@ const Population = (props) => {
   const result = output.reduce((acc, d) => {
     const found = acc.find(a => a.title === d.title);
 
-    const year = { year: d.year, pop: d.pop }; 
+    const year = { year: d.year, population: d.population }; 
     if (!found) {
       acc.push({title:d.title, data: [year]});
     }
@@ -34,12 +34,13 @@ const Population = (props) => {
     }
     return acc;
   }, []);
+  console.log(result);
   
   // select tab
   const handleChange = (e, newValue) => {
     setValue(newValue);
   };
-  
+
   return (
     <>
     <nav>
