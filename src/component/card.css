@@ -1,0 +1,52 @@
+
+.card {
+  width: 300px;
+  height: 100px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(1fr, 3);
+  grid-template-rows: 35px 65px;
+  grid-template-areas: 
+  "landscape landscape landscape"
+  "year2017 year2018 year2019";
+}
+
+.landscape {
+  grid-area: landscape;
+  background-color:#00B388;
+  border-radius: 5px 5px 0 0;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.year2017 {
+  grid-area: year2017;
+  background-color:#7AE1BF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+flex-direction: column;
+}
+
+.year2018 {
+  grid-area: year2018;
+  background-color:#F7F4F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+flex-direction: column;
+}
+
+.year2019 {
+  grid-area: year2019;
+  background-color:#7AE1BF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+

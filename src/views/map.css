@@ -1,0 +1,10 @@
+
+.map {
+  display: flex;
+  align-items: center;
+}
+.map img {
+  margin-top: 40px;
+  width: 313;
+  height: 690;
+}
