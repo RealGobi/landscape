@@ -8,7 +8,7 @@ const Card = ({ title, data }) => {
         <div className="landscape">
           <p style={{ fontSize: '20px', fontWeight: 'bold' }}>{title ? title : 'Landskap'}</p>
         </div>
-        {data &&
+        { data ?
           data.map((item, idx) => {
             return (
               <div className={'year'+item.year} key={idx}>
@@ -16,7 +16,13 @@ const Card = ({ title, data }) => {
                 <p>{item.pop }</p>
               </div>
             )
-          })}
+          })
+        :    
+        <div className="year2018">
+          <p style={{ fontWeight: 'bold' }}>År</p>
+          <p>Folkmängd</p>
+        </div>
+        }
       </div>
   )
 }
