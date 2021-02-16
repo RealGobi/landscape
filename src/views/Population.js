@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import MyTable from '../component/MyTable';
 import MyTabs from '../component/MyTabs';
-import Map from '../component/Map';
+import Map from './Map';
 import { landscape } from '../functions/LandscapeCode';
 import {Tabs, Tab} from '@material-ui/core';
 
