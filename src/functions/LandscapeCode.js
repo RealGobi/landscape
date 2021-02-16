@@ -27,7 +27,7 @@ export const landscape = (query) => {
         output.push({title: 'Västergötland', year: el.key[1], pop: el.values[0]});
       break;
       case '108':
-        output.push({title: 'Östergötland', year: el.key[1], pop: el.values[0]});
+        output.push({title: 'Östragötaland', year: el.key[1], pop: el.values[0]});
       break;
       case '109':
         output.push({title: 'Bohuslän', year: el.key[1], pop: el.values[0]});
